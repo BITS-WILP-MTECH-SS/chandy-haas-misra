@@ -20,7 +20,7 @@ public class ChandyMisraHaasOrDemo {
 	            for(int j=0;j<n;j++){
 	            		if(input != -1) {
 	            			System.out.println("*******************************************************");
-	            			System.out.println("Enter dependent processes for Process P"+i+". If there are no dependent processes, enter -1. Please do not enter process id "+1);
+	            			System.out.println("Enter dependent processes for Process P"+i+". If there are no dependent processes, enter -1. Please do not enter process id "+i);
 			                input = sc.nextInt();
 			                while((input >= n || input == i) && input != -1) {
 			                	System.out.println("Please enter a process id between 0 and "+(n-1)+". Please do not enter process id "+i);
