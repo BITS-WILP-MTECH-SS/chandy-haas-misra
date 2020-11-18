@@ -60,7 +60,7 @@ public class Process implements DistributedProcess{
 			m.setEngagagingMessage(true);
 			queryMessages.add(m);
 			initiateDeadlockDetection();
-		}else {
+		}else{
 			System.out.println("Sending Reply from "+m.getFrom().getPid()+" to "+m.getTo().getPid());
 			Message reply = createReplyMessage(m.getInitator(),m.getFrom(),m.getTo());
 			replyToMessage(reply);
@@ -76,6 +76,8 @@ public class Process implements DistributedProcess{
 			if(noOfQueryMsg == 0) {
 				if(p.getPid() == m.getInitator().getPid()) {
 					WaitForGraph.getInstance().setDeadlock(true);
+					WaitForGraph.getInstance().getDeadlockProcess().add(m.getInitator());
+					WaitForGraph.getInstance().getDeadlockProcess().add(m.getFrom());
 				}else {
 					Message reply = createReplyMessage(m.getInitator(),m.getTo(),m.getFrom());
 					replyToMessage(reply);

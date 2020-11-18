@@ -8,10 +8,12 @@ public class WaitForGraph {
 	private List<Process> processList;
 	private int numberofProcess = 0;
 	private boolean isDeadlock;
+	private List<Process> deadlockProcess = null;
 	private Process initiator;
 	
 	private WaitForGraph() {
 		this.processList = new ArrayList<Process>();
+		this.deadlockProcess = new ArrayList<Process>();
 	}
 	
 	public static WaitForGraph getInstance() {
@@ -84,5 +86,13 @@ public class WaitForGraph {
 
 	public void setInitiator(Process initiator) {
 		this.initiator = initiator;
+	}
+
+	public List<Process> getDeadlockProcess() {
+		return deadlockProcess;
+	}
+
+	public void setDeadlockProcess(List<Process> deadlockProcess) {
+		this.deadlockProcess = deadlockProcess;
 	}
 }
