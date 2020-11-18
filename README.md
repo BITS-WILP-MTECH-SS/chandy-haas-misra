@@ -1,4 +1,4 @@
-# chandy-haas-misra
+# chandy-haas-misra - OR
 
 
 1.	ChandyMisraHaasOrDemo.java – Main class. Begin program execution from here. This class gathers user input on number of processes, dependent processes for each of the process and initializes the deadlock detection algorithm
